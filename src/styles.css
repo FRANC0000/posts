@@ -1,4 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@custom-variant dark (&:where(.dark, .dark *)); 
+
+@layer base {
+    :root {
+      --app-bg: #fafafa;         
+      --app-header-bg: rgba(255, 255, 255, 0.8);
+      --app-card-bg: #ffffff;
+      --app-border: #cecece;     
+      --app-text-main: #09090b;  
+      --app-text-muted: #71717a; 
+      --app-nav-bg: rgba(255, 255, 255, 0.9);
+      --app-accent: #18181b;     
+      --app-accent-text: #ffffff;
+    }
+  
+    .dark {
+      --app-bg: #09090b;         
+      --app-header-bg: rgba(9, 9, 11, 0.8);
+      --app-card-bg: #09090b;
+      --app-border: #27272a;     
+      --app-text-main: #fafafa;  
+      --app-text-muted: #a1a1aa; 
+      --app-nav-bg: rgba(9, 9, 11, 0.9);
+      --app-accent: #fafafa;     
+      --app-accent-text: #09090b;
+    }
+  
+    body {
+      background-color: var(--app-bg);
+      color: var(--app-text-main);
+      transition: background-color 1s ease, color 1s ease;
+    }
+  }
+
+  @layer base {
+    :root {
+    
+      --app-modal-overlay: rgba(9, 9, 11, 0.5);
+      --app-modal-footer: rgba(250, 250, 250, 0.5);
+      --app-hover-bg: #f4f4f5;
+    }
+  
+    .dark {
+    
+      --app-modal-overlay: rgba(0, 0, 0, 0.7);
+      --app-modal-footer: rgba(24, 24, 27, 0.5);
+      --app-hover-bg: #27272a;
+    }
+  }

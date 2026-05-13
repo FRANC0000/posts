@@ -1,17 +1,17 @@
 services:
-  dev:
-    build:
+  # dev:
+  #   build:
+  #     context: .
+  #     dockerfile: dev.Dockerfile
+  #   image: posts:4
+  #   ports:
+  #     - "4202:4200"
+  #   volumes:
+  #   - .:/app
+  #   - /app/node_modules
+  prod:
+    build: 
       context: .
-      dockerfile: dev.Dockerfile
-    image: posts:4
+      dockerfile: nginx.Dockerfile
     ports:
-      - "4202:4200"
-    volumes:
-    - .:/app
-    - /app/node_modules
-  #prod:
-  #  build: 
-  #    context: .
-  #    dockerfile: nginx.Dockerfile
-  #  ports:
-  #    - "4200:80"
+      - "4200:80"

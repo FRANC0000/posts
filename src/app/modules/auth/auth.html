@@ -1,73 +1,80 @@
-<div class="min-h-screen flex items-center justify-center bg-zinc-50 px-4">
-    <div class="w-full max-w-[400px] space-y-6">
-      
-      <div class="flex flex-col space-y-2 text-center">
-        <h1 class="text-2xl font-semibold tracking-tight text-zinc-900">
-          Bienvenido de nuevo
-        </h1>
-        <p class="text-sm text-zinc-500">
-          Introduce tu email para acceder a tu cuenta
-        </p>
-      </div>
-  
-      <div class="p-6 bg-white border border-zinc-200 rounded-xl shadow-sm">
-        <form class="space-y-4">
-          
-          <div class="space-y-2">
-            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="nombre@ejemplo.com"
-              class="flex h-10 w-full rounded-md border border-zinc-300 bg-transparent px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-            />
-          </div>
-  
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <label class="text-sm font-medium leading-none" for="password">
-                Contraseña
-              </label>
-              <a href="#" class="text-xs text-zinc-500 hover:text-zinc-900 underline underline-offset-4">
-                ¿Olvidaste tu contraseña?
-              </a>
-            </div>
-            <input
-              type="password"
-              id="password"
-              class="flex h-10 w-full rounded-md border border-zinc-300 bg-transparent px-3 py-2 text-sm ring-offset-white placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2"
-            />
-          </div>
-  
-          <button class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 disabled:pointer-events-none disabled:opacity-50 bg-zinc-900 text-zinc-50 hover:bg-zinc-900/90 h-10 px-4 py-2 w-full">
-            Iniciar Sesión
-          </button>
-  
-          <div class="relative my-4">
-            <div class="absolute inset-0 flex items-center">
-              <span class="w-full border-t border-zinc-200"></span>
-            </div>
-            <div class="relative flex justify-center text-xs uppercase">
-              <span class="bg-white px-2 text-zinc-500">O continuar con</span>
-            </div>
-          </div>
-  
-          <button type="button" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border border-zinc-200 bg-white hover:bg-zinc-100 hover:text-zinc-900 h-10 px-4 py-2 w-full">
-            <svg class="mr-2 h-4 w-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.908 3.152-1.896 4.136-1.248 1.248-3.224 2.536-7.224 2.536-6.144 0-10.92-4.96-10.92-11.1s4.776-11.1 10.92-11.1c3.32 0 5.688 1.312 7.48 3.032l2.32-2.32c-2.024-1.936-4.744-3.416-9.8-3.416-8.584 0-15.624 6.944-15.624 15.528s7.04 15.528 15.624 15.528c4.632 0 8.12-1.528 10.792-4.32 2.768-2.768 3.632-6.68 3.632-9.88 0-.96-.08-1.84-.24-2.64z" fill="currentColor"></path>
-            </svg>
-            Google
-          </button>
-        </form>
-      </div>
-  
-      <p class="text-center text-sm text-zinc-500">
-        ¿No tienes una cuenta? 
-        <a href="#" class="font-medium text-zinc-900 hover:underline underline-offset-4">
-          Regístrate
-        </a>
+<div class="min-h-screen flex items-center justify-center px-4" [style.background]="'var(--app-bg)'">
+  <div class="w-full max-w-[400px] space-y-6">
+    
+    <div class="flex flex-col space-y-2 text-center">
+      <h1 class="text-2xl font-semibold tracking-tight" [style.color]="'var(--app-text-main)'">
+        Bienvenido de nuevo
+      </h1>
+      <p class="text-sm" [style.color]="'var(--app-text-muted)'">
+        Introduce tu email para acceder a tu cuenta
       </p>
     </div>
+
+    <div class="p-6 border rounded-xl shadow-sm transition-colors" 
+         [style.background]="'var(--app-card)'" 
+         [style.border-color]="'var(--app-border)'">
+      
+      <form class="space-y-4">
+        
+        <div class="space-y-2">
+          <label class="text-sm font-medium leading-none" [style.color]="'var(--app-text-main)'">
+            Email
+          </label>
+          <input
+            type="email"
+            placeholder="nombre@ejemplo.com"
+            class="flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2"
+            [style.border-color]="'var(--app-input)'"
+            [style.color]="'var(--app-text-main)'"
+          />
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <label class="text-sm font-medium leading-none" [style.color]="'var(--app-text-main)'">
+              Contraseña
+            </label>
+            <a href="#" class="text-xs underline underline-offset-4" [style.color]="'var(--app-text-muted)'">
+              ¿Olvidaste tu contraseña?
+            </a>
+          </div>
+          <input
+            type="password"
+            class="flex h-10 w-full rounded-md border bg-transparent px-3 py-2 text-sm focus:outline-none"
+            [style.border-color]="'var(--app-input)'"
+            [style.color]="'var(--app-text-main)'"
+          />
+        </div>
+
+        <button type="button" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border h-10 px-4 py-2 w-full"
+                [style.background]="'var(--app-card)'"
+                [style.border-color]="'var(--app-border)'"
+                [style.color]="'var(--app-text-main)'">
+            Iniciar Sesión
+        </button>
+
+        <div class="relative my-4">
+          <div class="relative flex justify-center text-xs uppercase">
+            <span class="px-2" [style.background]="'var(--app-card)'" [style.color]="'var(--app-text-muted)'">
+              O continuar con
+            </span>
+          </div>
+        </div>
+
+        <button type="button" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors border h-10 px-4 py-2 w-full"
+                [style.background]="'var(--app-card)'"
+                [style.border-color]="'var(--app-border)'"
+                [style.color]="'var(--app-text-main)'">
+          Google
+        </button>
+      </form>
+    </div>
+
+    <p class="text-center text-sm" [style.color]="'var(--app-text-muted)'">
+      ¿No tienes una cuenta? 
+      <a href="#" class="font-medium hover:underline underline-offset-4" [style.color]="'var(--app-text-main)'">
+        Regístrate
+      </a>
+    </p>
   </div>
+</div>
